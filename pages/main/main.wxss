@@ -1,0 +1,41 @@
+/* pages/main/main.wxss */
+@import "../lib/weui.wxss";
+.border:after {
+  border: none;
+}
+page{ 
+ display: flex; 
+ flex-direction: column; 
+ height: 100%; 
+} 
+.navbar{ 
+ flex: none; 
+ display: flex; 
+ background: #fff;
+ width: 750rpx; 
+} 
+.navbar .item{ 
+ position: relative; 
+ flex: auto; 
+ text-align: center;
+ padding-bottom: 30rpx; 
+} 
+.navbar .item.active{ 
+ color: #29b078; 
+} 
+.navbar .item.active:after{ 
+ content: ""; 
+ display: block; 
+ position: absolute; 
+ bottom: 0; 
+ left: 0; 
+ right: 0; 
+ height: 4rpx; 
+ background: #29b078; 
+} 
+.cell-padding {
+  padding: 30rpx 0;
+}
+.label-width {
+  width: 500rpx;
+}

@@ -1,0 +1,88 @@
+<!--select.wxml-->
+<!-- <view class='container'> -->
+  <view class='title'>试试什么职业适合你</view>
+  <view class="weui-cells weui-cells_after-title border">
+    <view class="weui-cell weui-cell_input" wx:for="{{score}}" wx:key="name">
+      <view class="weui-cell__hd">
+        <view class="weui-label">{{item.name}}</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker bindchange='bind{{select[index]}}Change' value='{{logs[index].Index}}' range='{{score[index].option}}' range-key='name'>
+          <view class="weui-input">{{score[index].option[logs[index].Index].name}}</view>
+        </picker>
+      </view>  
+    </view>
+  </view>
+  <!-- <view class="weui-cells weui-cells_after-title border">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">性　　别:</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker bindchange='bindSexChange' value='{{sindex}}' range='{{sex}}' range-key='name'>
+          <view class="weui-input">{{sex[sindex].name}}</view>
+        </picker>
+      </view>  
+    </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title border">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">年　　龄:</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker bindchange='bindAgeChange' value='{{aindex}}' range='{{age}}' range-key='name'>
+          <view class="weui-input">{{age[aindex].name}}</view>
+        </picker>
+      </view>  
+    </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title border">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">基　　础:</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker bindchange='bindBaseChange' value='{{bindex}}' range='{{base}}' range-key='name'>
+          <view class="weui-input">{{base[bindex].name}}</view>
+        </picker>
+      </view>  
+    </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title border">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">专　　业:</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker bindchange='bindMajorChange' value='{{mindex}}' range='{{major}}' range-key='name'>
+          <view class="weui-input">{{major[mindex].name}}</view>
+        </picker>
+      </view>  
+    </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title border">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">逻　　辑:</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker bindchange='bindLogicChange' value='{{lindex}}' range='{{logic}}' range-key='name'>
+          <view class="weui-input">{{logic[lindex].name}}</view>
+        </picker>
+      </view>  
+    </view>
+  </view> -->
+  <view class='btn-commit'>
+    <button type='primary' bindtap='bindRecommend'>选好了，点击查看</button>
+  </view>
+  <!-- <button bindtap='clicks'>{{names}}</button>  
+  <navigator url='../index/index'>11</navigator> -->
+<!-- </view> -->
+<!-- <view wx:for="{{array1}}" wx:key="message">
+  {{index}}: {{item.message}}
+  <text>{{item.index1}}</text>
+</view>
+<view wx:for="{{logs}}" wx:for-item="value" wx:key="logs">
+  {{value.catname}}
+</view> -->

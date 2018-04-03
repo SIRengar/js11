@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>  
+    <checkbox checked='{{true}}'></checkbox>
+    <text>遵守安全准则</text>
+    <button bindtap="click">确定</button>
+    <navigator url='../select/select' class='nav-url'>跳转新页面</navigator>
+    <navigator url='../logs/logs'>跳转logs页面</navigator>
+    <button bindtap='clicks'>+1s</button>
+  </view>
+  <view wx:if="{{condition > 5}}">
+    <button bindtap='clicks1' class='btn12'>-1s</button>
+  </view>
+</view>

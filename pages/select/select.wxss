@@ -1,0 +1,17 @@
+@import "../lib/weui.wxss";
+.picker{
+  padding: 19rpx 26rpx;
+  background-color: #fff;
+}
+.wd100{
+  position: relative;
+  top: 0;
+  width: 750rpx;
+}
+.btn-commit {
+  margin: 30rpx 30rpx 0 30rpx;
+  
+}
+.border:after {
+  border: none;
+}

@@ -1,0 +1,209 @@
+  <text class='title'>最适合你的职业推荐</text>
+  <!-- 导航条 -->
+  <view class='navbar'>
+    <text wx:for="{{navbar}}" 
+          data-idx="{{index}}" 
+          class="item {{currentTab==index ? 'active' : ''}}" 
+          wx:key="unique" 
+          bindtap="navbarTap">
+      {{item}}
+    </text>
+  </view>
+  <!-- 第一个 -->
+  <view>
+  <!-- <view hidden='{{currentTab!==0}}'> -->
+    <view class="weui-cells weui-cells_after-title border cell-padding">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">职业门栏</view>
+        </view>
+        <view class="weui-cell__bd">
+          <view class="weui-label">{{threshold}}星</view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title border cell-padding">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">难易程度</view>
+        </view>
+        <view class="weui-cell__bd">
+          <view class="weui-label">{{difficult}}星</view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title border cell-padding">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">成长周期</view>
+        </view>
+        <view class="weui-cell__bd">
+          <view class="weui-label">{{cycle}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title border cell-padding">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">求贤企业</view>
+        </view>
+        <view class="weui-cell__bd">
+          <view class="weui-label">{{company}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title border cell-padding">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">入学基础</view>
+        </view>
+        <view class="weui-cell__bd">
+          <view class="weui-label label-width">{{basis}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title border cell-padding">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">薪资待遇</view>
+        </view>
+        <view class="weui-cell__bd">
+          <view class="weui-label label-width" wx:for="{{salary}}">
+            <view>{{item.time}} 约{{item.salary}}K</view>
+          </view>
+        </view>
+      </view>
+    </view> 
+  </view>
+  <!-- 下面是之前的做法，同时渲染三个页面，通过标签选择页面显隐 -->
+  <!-- 第二个 -->
+  <!-- <view hidden='{{currentTab!==1}}'>
+    <view class="weui-cells weui-cells_after-title border cell-padding">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">职业门栏</view>
+        </view>
+        <view class="weui-cell__bd">
+          <view class="weui-label">{{threshold[1]}}星</view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title border cell-padding">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">难易程度</view>
+        </view>
+        <view class="weui-cell__bd">
+          <view class="weui-label">{{difficult[1]}}星</view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title border cell-padding">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">成长周期</view>
+        </view>
+        <view class="weui-cell__bd">
+          <view class="weui-label">{{cycle[1]}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title border cell-padding">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">求贤企业</view>
+        </view>
+        <view class="weui-cell__bd">
+          <view class="weui-label">{{company[1]}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title border cell-padding">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">入学基础</view>
+        </view>
+        <view class="weui-cell__bd">
+          <view class="weui-label label-width">{{basis[1]}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title border cell-padding">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">薪资待遇</view>
+        </view>
+        <view class="weui-cell__bd">
+          <view class="weui-label label-width" wx:for="{{salary[1]}}">
+            <view>{{item.time}} 约{{item.salary}}K</view>
+          </view>
+        </view>
+      </view>
+    </view> 
+  </view>
+  <!-- 第三个 -->
+  <!-- <view hidden='{{currentTab!==2}}'>
+    <view class="weui-cells weui-cells_after-title border cell-padding">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">职业门栏</view>
+        </view>
+        <view class="weui-cell__bd">
+          <view class="weui-label">{{threshold[2]}}星</view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title border cell-padding">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">难易程度</view>
+        </view>
+        <view class="weui-cell__bd">
+          <view class="weui-label">{{difficult[2]}}星</view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title border cell-padding">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">成长周期</view>
+        </view>
+        <view class="weui-cell__bd">
+          <view class="weui-label">{{cycle[2]}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title border cell-padding">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">求贤企业</view>
+        </view>
+        <view class="weui-cell__bd">
+          <view class="weui-label">{{company[2]}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title border cell-padding">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">入学基础</view>
+        </view>
+        <view class="weui-cell__bd">
+          <view class="weui-label label-width">{{basis[2]}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title border cell-padding">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">薪资待遇</view>
+        </view>
+        <view class="weui-cell__bd">
+          <view class="weui-label label-width" wx:for="{{salary[2]}}">
+            <view>{{item.time}} 约{{item.salary}}K</view>
+          </view>
+        </view>
+      </view>
+    </view> 
+  </view> -->
+<!-- </view> -->
